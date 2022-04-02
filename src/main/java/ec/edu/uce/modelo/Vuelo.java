@@ -27,25 +27,24 @@ public class Vuelo {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_vuelo")
 	@SequenceGenerator(name = "seq_vuelo", sequenceName = "seq_vuelo", allocationSize = 1)
 	@Column(name = "vuel_id")
-
 	private Integer id;
-	@DateTimeFormat(iso = ISO.DATE_TIME)
 
 	@Column(name = "vuel_origen")
 	private String origen;
 
 	@Column(name = "vuel_destino")
 	private String destino;
-	
+
 	@Column(name = "vuel_categoria")
 	private String categoria;
 
+	@DateTimeFormat(iso = ISO.DATE_TIME)
 	@Column(name = "vuel_fechaVuelo")
 	private LocalDateTime fechaVuelo;
 
 	@Column(name = "vuel_asientos_disponibles")
 	private Integer asientosDisponibles;
-	
+
 	@Column(name = "vuel_asientos_ocupados")
 	private Integer asientosOcupados;
 
@@ -54,7 +53,7 @@ public class Vuelo {
 
 	@Column(name = "vuel_estado")
 	private String estado;
-	
+
 	@Column(name = "vuel_numero")
 	private String numero;
 
@@ -160,7 +159,5 @@ public class Vuelo {
 	public void setNumero(String numero) {
 		this.numero = numero;
 	}
-	
-	
-}
 
+}

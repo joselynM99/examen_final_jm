@@ -47,7 +47,7 @@ public class CompraPasaje {
 	private Vuelo vuelo;
 
 	@ManyToOne
-	@JoinColumn(name = "copa_id")
+	@JoinColumn(name = "clie_id")
 	private Cliente cliente;
 
 	public Integer getId() {
