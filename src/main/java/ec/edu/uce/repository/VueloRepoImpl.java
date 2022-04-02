@@ -44,7 +44,7 @@ public class VueloRepoImpl implements IVueloRepo {
 	public List<Vuelo> buscarVuelosDisponibles(String origen, String destino, LocalDateTime fecha) {
 
 		TypedQuery<Vuelo> myQuery = this.entityManager.createQuery(
-				"SELECT v FROM Vuelo v WHERE v.origen =: origen AND v.destino=:destino AND v.fecha =:fecha AND v.estado =:'D'",
+				"SELECT v FROM Vuelo v WHERE v.origen =: origen AND v.destino=:destino AND v.fecha =:fecha",
 				Vuelo.class);
 
 		myQuery.setParameter("origen", origen);
@@ -56,8 +56,8 @@ public class VueloRepoImpl implements IVueloRepo {
 
 	@Override
 	public Vuelo buscarPorNumero(String numero) {
-		TypedQuery<Vuelo> myQuery = this.entityManager
-				.createQuery("SELECT v FROM Vuelo v WHERE v.numero =:numero", Vuelo.class);
+		TypedQuery<Vuelo> myQuery = this.entityManager.createQuery("SELECT v FROM Vuelo v WHERE v.numero =:numero",
+				Vuelo.class);
 
 		myQuery.setParameter("numero", numero);
 
